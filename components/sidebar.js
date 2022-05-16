@@ -1,7 +1,8 @@
 import React from 'react'
 import { ConnectButton } from 'web3uikit'
+import Image from 'next/image'
 
-const isAuthenticated = false
+const isAuthenticated = true
 const username = 'hq'
 const Sidebar = () => {
     const styles = {
@@ -19,10 +20,11 @@ const Sidebar = () => {
                     <>
                         <div className={styles.profilePicContainer}>
                             <Image
-                            alt='profile'
-                            className={styles.profilePic}
-                            height={100}
-                            width={100}
+                                src={`https://avatars.dicebear.com/api/pixel-art/${username}.svg`}
+                                alt='profile'
+                                className={styles.profilePic}
+                                height={100}
+                                width={100}
                             />
                         </div>
                         //update user database
