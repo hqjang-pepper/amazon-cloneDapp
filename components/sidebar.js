@@ -4,6 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logo from '../assets/amazon_logo.png'
 import logoFull from '../assets/amazon_logo_full.png'
+import { FaBox } from 'react-icons/fa'
+import { BsFillBookmarkFill, BsFillPersonFill} from 'react-icons/bs'
+
 
 const isAuthenticated = true
 const username = ''
@@ -79,7 +82,16 @@ const Sidebar = () => {
                     </div>
                 </Link>
                     <div className={styles.menuItem}>
-                        
+                        <FaBox/>
+                        Collections
+                    </div>
+                    <div className={styles.menuItem}>
+                        <BsFillBookmarkFill/>
+                        Saved
+                    </div>
+                    <div className={styles.menuItem}>
+                        <BsFillPersonFill/>
+                        Saved
                     </div>
             </div>
         </div>
