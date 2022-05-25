@@ -1,9 +1,12 @@
 import React from 'react'
 import { ConnectButton } from 'web3uikit'
 import Image from 'next/image'
+import Link from 'next/link'
+import logo from '../assets/amazon_logo.png'
+import logoFull from '../assets/amazon_logo_full.png'
 
 const isAuthenticated = true
-const username = 'hq'
+const username = ''
 const Sidebar = () => {
     const styles = {
         container: `h-full w-[300px] flex flex-col bg-[#fff] static`,
@@ -11,6 +14,9 @@ const Sidebar = () => {
         profilePicContainer: `flex  rounded-xl items-center justify-center w-full h-full mb-5`,
         profilePic: `rounded-3xl object-cover`,
         welcome: ` text-md mb-2 font-bold text-2xl text-white`,
+        usernameInput: `bg-transparent border-white border-2 rounded-lg w-[80%] py-2 px-4 text-lg mt-[20px] placeholder:text-white focus:outline-none flex justify-center items-center text-white`,
+        setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
+
     }
     return(
         <div className={styles.container}>
@@ -27,7 +33,7 @@ const Sidebar = () => {
                                 width={100}
                             />
                         </div>
-                        //update user database
+                        {/* // update user database */}
                         {!username ? (
                             //if there is no username, show me the input 
                             <>
@@ -35,14 +41,14 @@ const Sidebar = () => {
                                     <input
                                         type='text'
                                         placeholder='Username...'
-                                        className={usernameInput}
+                                        className={styles.usernameInput}
                                         // value={nickname}
                                         // onChange = {e => setNickname(e.target.value)}
                                     />
                                 </div>
                                 <button 
                                 className={styles.setNickname} 
-                                onClick={handleSetUsername}
+                                // onClick={handleSetUsername}
                                 >
                                 set Nickname
                                 </button>
@@ -55,8 +61,26 @@ const Sidebar = () => {
                         )
                         }
                     </>
-                    )
-                }
+                    )}
+                    <div className={styles.ConnectButton}>
+                        <ConnectButton/>
+                    </div>
+            </div>
+            <div className={styles.menu}>
+                <Link href='/'>
+                    <div className={styles.menuItem}>
+                        <Image src={logo}
+                        height={30}
+                        width={30}
+                        className = {styles.amazonlogo}
+                        />
+                        My Amazon
+                        <br /> board
+                    </div>
+                </Link>
+                    <div className={styles.menuItem}>
+                        
+                    </div>
             </div>
         </div>
     )
